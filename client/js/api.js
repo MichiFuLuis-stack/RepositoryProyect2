@@ -7,7 +7,7 @@ const API = (() => {
   'use strict';
 
   // URL base del API
-  const BASE_URL = 'http://localhost:3000/api';
+  const BASE_URL = '/api';
 
   // Clave para almacenar el token en localStorage
   const TOKEN_KEY = 'docplant_token';
