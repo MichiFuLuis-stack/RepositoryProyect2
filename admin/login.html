@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - DocPlant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <style>
+    body {
+      background-color: #f3f4f6; /* Light gray background */
+      color: #1f2937; /* Dark gray text */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    .admin-login-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+      background: #ffffff; /* White card */
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #111827;
+    }
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #4b5563;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      background: #f9fafb;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      color: #111827;
+      font-family: inherit;
+      box-sizing: border-box;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+      background: #ffffff;
+    }
+    .btn-login {
+      width: 100%;
+      padding: 14px;
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+    .btn-login:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+    .admin-badge {
+      display: inline-block;
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    #error-msg {
+      color: #ef4444;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="admin-login-container">
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 2C12 2 8 6 8 10c0 2 1 4 2 5l-2 13c0 1 1 2 2 2h12c1 0 2-1 2-2l-2-13c1-1 2-3 2-5 0-4-4-8-8-8z" fill="#10b981"/>
+      </svg>
+      <span>DocPlant</span>
+    </div>
+    
+    <div class="admin-badge">Zona Restringida - Administrador</div>
+    
+    <form id="admin-login-form">
+      <div class="form-group">
+        <label for="email">Correo Administrativo</label>
+        <input type="email" id="email" class="form-control" placeholder="admin@docplant.com" required value="admin@docplant.com">
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" class="form-control" placeholder="••••••••" required value="admin123">
+      </div>
+      
+      <button type="submit" class="btn-login" id="login-btn">Acceder al Panel</button>
+      
+      <div id="error-msg"></div>
+    </form>
+    
+    <div style="margin-top: 25px; font-size: 0.85rem; color: var(--color-text-muted);">
+      <a href="../client/index.html" style="color: var(--color-text-secondary); text-decoration: none;">&larr; Volver al sitio web público</a>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

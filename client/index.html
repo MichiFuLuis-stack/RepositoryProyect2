@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocPlant - Transforma tus documentos con inteligencia</title>
+  <meta name="description" content="Sube tu plantilla, agrega tu contenido, y DocPlant genera el documento perfecto en segundos.">
+  
+  <!-- Estilos CSS en el orden requerido -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/upload.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;" data-page="home">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <!-- Logo -->
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2C12 2 8 6 8 10c0 2 1 4 2 5l-2 13c0 1 1 2 2 2h12c1 0 2-1 2-2l-2-13c1-1 2-3 2-5 0-4-4-8-8-8z" fill="url(#leaf)"/>
+          <path d="M16 4c-1 0-2 1-2 2s1 2 2 2 2-1 2-2-1-2-2-2z" fill="#0a0f0d" opacity="0.3"/>
+          <path d="M13 16h6M13 19h6M13 22h4" stroke="#0a0f0d" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <defs><linearGradient id="leaf" x1="8" y1="2" x2="24" y2="30"><stop stop-color="#10b981"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+        </svg>
+        <span style="font-family: var(--font-heading); font-weight: 700; color: var(--color-text); font-size: 1.25rem;">DocPlant</span>
+      </a>
+      
+      <!-- Enlaces Centro -->
+      <div class="navbar-links" style="display: flex; gap: 20px;">
+        <a href="index.html" style="color: var(--color-text); text-decoration: none; font-weight: 500;">Inicio</a>
+        <a href="/pricing.html" style="color: var(--color-text-secondary); text-decoration: none; font-weight: 500;">Precios</a>
+      </div>
+
+      <!-- Acciones Derecha -->
+      <div class="navbar-actions" id="auth-buttons" style="display: flex; gap: 10px;">
+        <a href="login.html" class="btn btn-ghost" style="color: var(--color-text); text-decoration: none;">Iniciar Sesión</a>
+        <a href="register.html" class="btn btn-primary" style="text-decoration: none;">Registrarse</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="padding: 120px 0 60px; text-align: center; position: relative;">
+    <div class="container">
+      <h1 class="text-gradient" style="font-size: 4rem; margin-bottom: 20px; font-family: var(--font-heading); background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        Transforma tus documentos<br>con inteligencia
+      </h1>
+      <p style="font-size: 1.2rem; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto 40px;">
+        Sube tu plantilla, agrega tu contenido, y DocPlant genera el documento perfecto en segundos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Tool Section -->
+  <section class="tool-section" style="padding: 0 0 80px;">
+    <div class="container">
+      <div class="card glass-card" style="padding: 30px; border-radius: var(--radius-lg); background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: var(--glass-blur);">
+        
+        <div class="upload-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+          
+          <!-- Lado Izquierdo: Plantilla -->
+          <div class="upload-side">
+            <h3 style="margin-bottom: 15px; color: var(--color-text); font-family: var(--font-heading);">1. Archivo Modelo (Plantilla)</h3>
+            <div class="upload-zone" id="template-zone" style="border: 2px dashed var(--color-border); border-radius: var(--radius-md); padding: 50px 20px; text-align: center; cursor: pointer; transition: var(--transition);">
+              <div class="upload-zone-icon" style="font-size: 48px; margin-bottom: 15px;">📄</div>
+              <div class="upload-zone-text" style="color: var(--color-text-secondary);">
+                Arrastra tu plantilla aquí o <strong>haz clic para buscar</strong><br>
+                <small>(.docx, .doc, imágenes)</small>
+              </div>
+              <input type="file" id="template-input" style="display: none;" accept=".docx,.doc,.jpg,.jpeg,.png">
+            </div>
+          </div>
+
+          <!-- Lado Derecho: Contenido -->
+          <div class="upload-side">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+              <h3 style="color: var(--color-text); font-family: var(--font-heading); margin: 0;">2. Tu Contenido</h3>
+              <div class="upload-tabs" style="display: flex; gap: 10px;">
+                <button id="tab-content-file" class="btn btn-sm btn-secondary active">Archivo</button>
+                <button id="tab-content-text" class="btn btn-sm btn-ghost">Texto</button>
+              </div>
+            </div>
+            
+            <div class="upload-zone" id="content-zone" style="border: 2px dashed var(--color-border); border-radius: var(--radius-md); padding: 50px 20px; text-align: center; cursor: pointer; transition: var(--transition);">
+              <div class="upload-zone-icon" style="font-size: 48px; margin-bottom: 15px;">📝</div>
+              <div class="upload-zone-text" style="color: var(--color-text-secondary);">
+                Arrastra tu texto aquí o <strong>haz clic para buscar</strong><br>
+                <small>(.txt, .json, .docx)</small>
+              </div>
+              <input type="file" id="content-input" style="display: none;" accept=".txt,.json,.docx,.doc">
+            </div>
+            
+            <!-- Textarea (oculto por defecto) -->
+            <textarea id="content-textarea" class="input upload-text-input" placeholder="O escribe/pega tu texto directamente aquí..." style="display: none; width: 100%; height: 215px; resize: none; background: rgba(0,0,0,0.2); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 15px; color: var(--color-text);"></textarea>
+            <div id="text-counter" style="text-align: right; color: var(--color-text-secondary); font-size: 0.8rem; margin-top: 5px; display: none;">0 caracteres</div>
+          </div>
+
+        </div>
+
+        <!-- Botón Generar -->
+        <div style="text-align: center; margin-top: 40px;">
+          <button id="generate-btn" class="btn btn-primary btn-lg generate-btn" style="padding: 15px 50px; font-size: 1.2rem; font-weight: 600; box-shadow: var(--shadow-glow);">
+            ✨ Generar Documento
+          </button>
+        </div>
+
+        <!-- Área de Resultados (Oculta por defecto) -->
+        <div id="result-area" class="result-area hidden" style="margin-top: 40px; border-top: 1px solid var(--color-border); padding-top: 30px; text-align: center;">
+          <h3 style="color: var(--color-success); margin-bottom: 20px;">¡Documento Generado con Éxito!</h3>
+          <div class="download-buttons" style="display: flex; justify-content: center; gap: 15px;">
+            <button id="download-docx" class="btn btn-primary">Descargar Word (.docx)</button>
+            <button id="download-pdf" class="btn btn-secondary">Descargar PDF</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" style="padding: 60px 0; background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="card glass-card" style="padding: 30px; text-align: center; border-radius: var(--radius-md);">
+          <div style="font-size: 40px; margin-bottom: 20px;">⚡</div>
+          <h3 style="margin-bottom: 10px;">Ultrarrápido</h3>
+          <p style="color: var(--color-text-secondary);">Procesamiento en segundos. No pierdas tiempo formateando documentos manualmente.</p>
+        </div>
+        <div class="card glass-card" style="padding: 30px; text-align: center; border-radius: var(--radius-md);">
+          <div style="font-size: 40px; margin-bottom: 20px;">🔒</div>
+          <h3 style="margin-bottom: 10px;">Seguro y Privado</h3>
+          <p style="color: var(--color-text-secondary);">Tus archivos se procesan de forma segura y se eliminan automáticamente.</p>
+        </div>
+        <div class="card glass-card" style="padding: 30px; text-align: center; border-radius: var(--radius-md);">
+          <div style="font-size: 40px; margin-bottom: 20px;">🌱</div>
+          <h3 style="margin-bottom: 10px;">Flexible</h3>
+          <p style="color: var(--color-text-secondary);">Soporta múltiples formatos de entrada y salidas perfectas en Word o PDF.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--color-border); margin-top: 60px;">
+    <div class="container">
+      <p style="color: var(--color-text-secondary);">© 2026 DocPlant. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+  <!-- Scripts -->
+  <script src="js/api.js?v=2"></script>
+  <script src="js/app.js?v=2"></script>
+  <script src="js/upload.js?v=2"></script>
+</body>
+</html>

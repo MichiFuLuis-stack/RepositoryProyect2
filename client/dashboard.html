@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Panel - DocPlant</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="background: var(--color-bg);">
+
+  <!-- Navbar -->
+  <nav class="navbar" style="border-bottom: 1px solid var(--color-border);">
+    <div class="container navbar-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2C12 2 8 6 8 10c0 2 1 4 2 5l-2 13c0 1 1 2 2 2h12c1 0 2-1 2-2l-2-13c1-1 2-3 2-5 0-4-4-8-8-8z" fill="url(#leaf)"/>
+          <path d="M16 4c-1 0-2 1-2 2s1 2 2 2 2-1 2-2-1-2-2-2z" fill="#0a0f0d" opacity="0.3"/>
+          <path d="M13 16h6M13 19h6M13 22h4" stroke="#0a0f0d" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <defs><linearGradient id="leaf" x1="8" y1="2" x2="24" y2="30"><stop stop-color="#10b981"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+        </svg>
+        <span style="font-family: var(--font-heading); font-weight: 700; color: var(--color-text); font-size: 1.25rem;">DocPlant</span>
+      </a>
+      
+      <div class="navbar-actions" style="display: flex; align-items: center; gap: 15px;">
+        <a href="index.html" class="btn btn-primary btn-sm">Generar Nuevo</a>
+        <div style="width: 35px; height: 35px; border-radius: 50%; background: var(--gradient-primary); display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: pointer;">
+          U
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" style="padding: 100px 0 60px; display: flex; gap: 30px;">
+    
+    <!-- Sidebar -->
+    <aside style="width: 250px; flex-shrink: 0;">
+      <div class="card glass-card" style="padding: 20px; position: sticky; top: 100px;">
+        <h4 style="color: var(--color-text-secondary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">Menú</h4>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="dashboard.html" style="color: var(--color-primary); text-decoration: none; display: block; padding: 8px 12px; background: rgba(16,185,129,0.1); border-radius: var(--radius-sm);">Mis Documentos</a></li>
+          <li><a href="#" style="color: var(--color-text); text-decoration: none; display: block; padding: 8px 12px; transition: var(--transition);">Mi Cuenta</a></li>
+          <li><a href="pricing.html" style="color: var(--color-text); text-decoration: none; display: block; padding: 8px 12px; transition: var(--transition);">Suscripción</a></li>
+          <li><a href="#" style="color: var(--color-error); text-decoration: none; display: block; padding: 8px 12px; transition: var(--transition); margin-top: 20px;">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main style="flex: 1;">
+      <div style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <h1 style="font-family: var(--font-heading); margin-bottom: 5px;">Bienvenido, Usuario</h1>
+          <p style="color: var(--color-text-secondary);">Membresía actual: <span style="color: var(--color-text); padding: 2px 8px; background: rgba(255,255,255,0.1); border-radius: 12px; font-size: 0.85rem;">Free</span></p>
+        </div>
+        <div style="text-align: right;">
+          <p style="color: var(--color-text-secondary); margin-bottom: 5px; font-size: 0.9rem;">Subidas de hoy</p>
+          <div style="font-size: 1.5rem; font-weight: bold; color: var(--color-primary);">2 <span style="color: var(--color-text-muted); font-size: 1rem;">/ 5</span></div>
+        </div>
+      </div>
+
+      <div class="card glass-card" style="padding: 0; overflow: hidden;">
+        <div style="padding: 20px; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="font-family: var(--font-heading); margin: 0;">Historial de Documentos</h3>
+          <button class="btn btn-secondary btn-sm">Descargar Todos</button>
+        </div>
+        
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+          <thead>
+            <tr style="background: rgba(0,0,0,0.2);">
+              <th style="padding: 15px 20px; color: var(--color-text-secondary); font-weight: 500;">Nombre</th>
+              <th style="padding: 15px 20px; color: var(--color-text-secondary); font-weight: 500;">Formato</th>
+              <th style="padding: 15px 20px; color: var(--color-text-secondary); font-weight: 500;">Fecha</th>
+              <th style="padding: 15px 20px; color: var(--color-text-secondary); font-weight: 500; text-align: right;">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Fila de ejemplo -->
+            <tr style="border-bottom: 1px solid var(--color-border);">
+              <td style="padding: 15px 20px;">DocPlant_Contrato_Venta.docx</td>
+              <td style="padding: 15px 20px;"><span style="background: rgba(43, 87, 154, 0.2); color: #88b0f2; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">DOCX</span></td>
+              <td style="padding: 15px 20px; color: var(--color-text-secondary);">Hoy, 10:45 AM</td>
+              <td style="padding: 15px 20px; text-align: right;">
+                <button class="btn btn-primary btn-sm" style="margin-right: 5px;">⬇️</button>
+                <button class="btn btn-danger btn-sm">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <!-- Estado vacío (oculto si hay datos) -->
+        <!-- <div style="padding: 60px 20px; text-align: center; color: var(--color-text-secondary);">
+          <div style="font-size: 40px; margin-bottom: 15px; opacity: 0.5;">📁</div>
+          <p>Aún no has generado ningún documento.</p>
+          <a href="index.html" class="btn btn-primary" style="margin-top: 15px; text-decoration: none;">Crear el primero</a>
+        </div> -->
+      </div>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

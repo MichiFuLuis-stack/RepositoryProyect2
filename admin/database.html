@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base de Datos - DocPlant Admin</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-layout">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><path d="M16 2C12 2 8 6 8 10c0 2 1 4 2 5l-2 13c0 1 1 2 2 2h12c1 0 2-1 2-2l-2-13c1-1 2-3 2-5 0-4-4-8-8-8z" fill="#10b981"/></svg>
+        <span>DocPlant Admin</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="sidebar-nav-item"><span>📊</span><span>Dashboard</span></a>
+      <a href="clients.html" class="sidebar-nav-item"><span>👥</span><span>Clientes</span></a>
+      <a href="files.html" class="sidebar-nav-item"><span>📁</span><span>Archivos</span></a>
+      <a href="billing.html" class="sidebar-nav-item"><span>💳</span><span>Facturación</span></a>
+      <a href="server.html" class="sidebar-nav-item"><span>🖥️</span><span>Servidor</span></a>
+      <a href="database.html" class="sidebar-nav-item active"><span>🗄️</span><span>Base de Datos</span></a>
+      <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0;"></div>
+      <a href="../client/index.html" class="sidebar-nav-item"><span>🌐</span><span>Ir al Sitio Web</span></a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div><h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem;">Visor de Base de Datos (SQLite)</h2></div>
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <span style="display: flex; align-items: center; gap: 5px; color: #10b981; font-size: 0.9rem;"><span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #10b981;"></span> Conectado</span>
+      </div>
+    </header>
+
+    <div class="admin-content" style="padding: 30px; max-width: 1400px; margin: 0 auto; padding-top: 100px;">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <div style="display: flex; gap: 15px; align-items: center;">
+          <select id="table-select" style="padding: 10px; border-radius: 8px; background: var(--color-surface); border: 1px solid var(--color-border); color: white;">
+            <option value="">Seleccionar Tabla...</option>
+            <option value="clients">clients</option>
+            <option value="uploaded_files">uploaded_files</option>
+            <option value="generated_files">generated_files</option>
+            <option value="invoices">invoices</option>
+            <option value="sessions">sessions</option>
+          </select>
+          <button id="refresh-btn" class="btn btn-secondary" style="padding: 8px 15px;">↻ Refrescar</button>
+        </div>
+        <div>
+          <button class="btn btn-secondary" style="padding: 8px 15px;">⬇️ Exportar JSON</button>
+        </div>
+      </div>
+
+      <div class="card glass-card" style="padding: 0; overflow-x: auto; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 800px;" id="db-table">
+          <thead style="background: rgba(0,0,0,0.3);">
+            <tr id="db-table-head">
+              <th style="padding: 15px; color: var(--color-text-secondary);">Selecciona una tabla para ver los datos</th>
+            </tr>
+          </thead>
+          <tbody id="db-table-body">
+            <tr><td style="padding: 30px; text-align: center; color: var(--color-text-muted);">Sin datos</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/api-admin.js"></script>
+  <script src="js/db-viewer.js"></script>
+</body>
+</html>

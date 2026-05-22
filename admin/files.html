@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Administrador - DocPlant</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="sidebar-header"><div class="logo"><span>DocPlant Admin</span></div></div>
+    <nav class="sidebar-nav">
+      <a href="index.html" class="sidebar-nav-item"><span>📊</span><span>Dashboard</span></a>
+      <a href="clients.html" class="sidebar-nav-item active"><span>👥</span><span>Clientes</span></a>
+      <a href="files.html" class="sidebar-nav-item"><span>📁</span><span>Archivos</span></a>
+      <a href="billing.html" class="sidebar-nav-item"><span>💳</span><span>Facturación</span></a>
+      <a href="server.html" class="sidebar-nav-item"><span>🖥️</span><span>Servidor</span></a>
+      <a href="database.html" class="sidebar-nav-item"><span>🗄️</span><span>Base de Datos</span></a>
+    </nav>
+  </aside>
+  <main class="admin-main">
+    <header class="admin-topbar"><h2>Módulo en construcción</h2></header>
+    <div class="admin-content" style="padding: 100px 30px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1 style="font-family: 'Space Grotesk', sans-serif;">Gestión de Archivos</h1>
+        <div style="display: flex; gap: 15px;">
+          <select id="filter-type" style="padding: 10px; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text);">
+            <option value="all">Todos los archivos</option>
+            <option value="uploaded">Subidos por clientes</option>
+            <option value="generated">Generados (Docx/PDF)</option>
+          </select>
+          <input type="text" id="search-files" placeholder="🔍 Buscar archivo..." style="padding: 10px 15px; border-radius: 8px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); width: 250px;">
+        </div>
+      </div>
+
+      <div class="card glass-card" style="padding: 0; overflow-x: auto; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+          <thead style="background: rgba(0,0,0,0.3);">
+            <tr>
+              <th style="padding: 15px; color: var(--color-text-secondary);">ID</th>
+              <th style="padding: 15px; color: var(--color-text-secondary);">Nombre Original</th>
+              <th style="padding: 15px; color: var(--color-text-secondary);">Categoría</th>
+              <th style="padding: 15px; color: var(--color-text-secondary);">Tamaño</th>
+              <th style="padding: 15px; color: var(--color-text-secondary);">Fecha</th>
+              <th style="padding: 15px; color: var(--color-text-secondary);">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="files-table-body">
+            <!-- Rellenado con JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  
+  <script src="js/api-admin.js"></script>
+  <script src="js/admin-files.js"></script>
+</body>
+</html>

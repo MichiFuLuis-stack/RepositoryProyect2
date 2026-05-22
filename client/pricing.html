@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precios - DocPlant</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container navbar-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2C12 2 8 6 8 10c0 2 1 4 2 5l-2 13c0 1 1 2 2 2h12c1 0 2-1 2-2l-2-13c1-1 2-3 2-5 0-4-4-8-8-8z" fill="url(#leaf)"/>
+          <path d="M16 4c-1 0-2 1-2 2s1 2 2 2 2-1 2-2-1-2-2-2z" fill="#0a0f0d" opacity="0.3"/>
+          <path d="M13 16h6M13 19h6M13 22h4" stroke="#0a0f0d" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <defs><linearGradient id="leaf" x1="8" y1="2" x2="24" y2="30"><stop stop-color="#10b981"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs>
+        </svg>
+        <span style="font-family: var(--font-heading); font-weight: 700; color: var(--color-text); font-size: 1.25rem;">DocPlant</span>
+      </a>
+      <div class="navbar-links" style="display: flex; gap: 20px;">
+        <a href="index.html" style="color: var(--color-text-secondary); text-decoration: none; font-weight: 500;">Inicio</a>
+        <a href="pricing.html" style="color: var(--color-text); text-decoration: none; font-weight: 500;">Precios</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="login.html" class="btn btn-ghost" style="color: var(--color-text); text-decoration: none;">Iniciar Sesión</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Pricing Section -->
+  <section style="flex: 1; padding: 120px 20px 80px;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1 class="text-gradient" style="font-size: 3.5rem; margin-bottom: 15px; font-family: var(--font-heading); background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sube de nivel tus documentos</h1>
+        <p style="color: var(--color-text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Elige el plan que mejor se adapte a tus necesidades. Cancela en cualquier momento.</p>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; align-items: stretch;">
+        
+        <!-- Plan Free -->
+        <div class="card glass-card" style="width: 100%; max-width: 380px; padding: 40px; border-radius: var(--radius-lg); display: flex; flex-direction: column;">
+          <div style="margin-bottom: 25px;">
+            <span style="display: inline-block; padding: 4px 12px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.85rem; margin-bottom: 15px;">BÁSICO</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 5px;">Gratis</h2>
+            <p style="color: var(--color-text-secondary);">Para usuarios ocasionales.</p>
+          </div>
+          
+          <div style="font-size: 3rem; font-weight: 700; margin-bottom: 30px; color: var(--color-text);">$0<span style="font-size: 1rem; color: var(--color-text-secondary); font-weight: 400;">/mes</span></div>
+          
+          <ul style="list-style: none; padding: 0; margin: 0 0 40px; flex: 1;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> 2 archivos simultáneos</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> 5 subidas por día</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> Descarga en Word (.docx)</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> Máximo 10MB por archivo</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--color-text-muted);"><span style="color: var(--color-error);">✗</span> Sin historial de descargas</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px; color: var(--color-text-muted);"><span style="color: var(--color-error);">✗</span> Sin descarga en PDF</li>
+          </ul>
+          
+          <a href="index.html" class="btn btn-secondary" style="width: 100%; text-decoration: none; text-align: center; padding: 15px;">Empezar Gratis</a>
+        </div>
+
+        <!-- Plan Premium -->
+        <div class="card glass-card" style="width: 100%; max-width: 380px; padding: 40px; border-radius: var(--radius-lg); display: flex; flex-direction: column; position: relative; border: 1px solid var(--color-primary); box-shadow: var(--shadow-glow);">
+          <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--gradient-primary); padding: 5px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; color: #fff;">MÁS POPULAR</div>
+          
+          <div style="margin-bottom: 25px;">
+            <span style="display: inline-block; padding: 4px 12px; background: rgba(16,185,129,0.2); color: var(--color-primary); border-radius: 20px; font-size: 0.85rem; margin-bottom: 15px;">PRO</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 5px;">Premium</h2>
+            <p style="color: var(--color-text-secondary);">El poder total para tu trabajo.</p>
+          </div>
+          
+          <div style="font-size: 3rem; font-weight: 700; margin-bottom: 30px; color: var(--color-text);">$9.99<span style="font-size: 1rem; color: var(--color-text-secondary); font-weight: 400;">/mes</span></div>
+          
+          <ul style="list-style: none; padding: 0; margin: 0 0 40px; flex: 1;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> 4 archivos simultáneos</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> Subidas ilimitadas</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> Descarga en Word (.docx) y PDF</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> Máximo 50MB por archivo</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> Historial completo de documentos</li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;"><span style="color: var(--color-primary);">✓</span> Soporte prioritario</li>
+          </ul>
+          
+          <button class="btn btn-primary" style="width: 100%; padding: 15px; font-weight: 600; box-shadow: var(--shadow-glow);" onclick="alert('Inicia sesión para realizar el pago por PayPal')">Mejorar a Premium</button>
+          <div style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: var(--color-text-secondary); display: flex; align-items: center; justify-content: center; gap: 5px;">
+            🔒 Pagos seguros con PayPal
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--color-border); margin-top: auto;">
+    <div class="container">
+      <p style="color: var(--color-text-secondary);">© 2026 DocPlant. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

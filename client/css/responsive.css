@@ -1,0 +1,468 @@
+/* ============================================
+   DocPlant 🌱 — Estilos Responsivos
+   responsive.css — Breakpoints y adaptaciones móviles
+   ============================================ */
+
+/* =========================
+   BREAKPOINT: 1200px (Escritorios pequeños)
+   ========================= */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .dashboard-main {
+    padding: 1.5rem;
+  }
+}
+
+/* =========================
+   BREAKPOINT: 992px (Tablets)
+   ========================= */
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+
+  /* Navbar: mostrar botón hamburguesa */
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-actions .btn {
+    display: none;
+  }
+
+  .navbar-actions .navbar-user {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.063rem;
+  }
+
+  /* Zona de subida: apilar verticalmente */
+  .upload-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Features: 2 columnas */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Pasos: apilar */
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .steps-grid::before {
+    display: none;
+  }
+
+  /* Pricing: apilar */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+  }
+
+  /* Dashboard sidebar colapsado */
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+  }
+
+  .dashboard-sidebar.active {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+  }
+
+  .dashboard-sidebar-toggle {
+    display: flex;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-links {
+    gap: 2rem;
+  }
+}
+
+/* =========================
+   BREAKPOINT: 768px (Tablets pequeñas / Móvil grande)
+   ========================= */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.375rem; }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 6rem 0 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Zona de subida */
+  .upload-zone {
+    min-height: 220px;
+    padding: 2rem 1.5rem;
+  }
+
+  .upload-zone-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Botón generar */
+  .generate-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  /* Botones de descarga */
+  .download-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download-btn {
+    justify-content: center;
+  }
+
+  /* Features: 1 columna */
+  .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* CTA */
+  .cta-card {
+    padding: 3rem 2rem;
+  }
+
+  .cta-card h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Auth */
+  .auth-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Dashboard */
+  .dashboard-welcome {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tabla: scroll horizontal */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Toasts */
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    bottom: 1rem;
+  }
+
+  .toast {
+    min-width: auto;
+    max-width: none;
+  }
+
+  /* Footer */
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Pricing toggle */
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+/* =========================
+   BREAKPOINT: 576px (Móvil)
+   ========================= */
+@media (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  /* Navbar */
+  .navbar-inner {
+    height: 60px;
+    padding: 0 1rem;
+  }
+
+  .navbar-brand .logo span {
+    font-size: 1.25rem;
+  }
+
+  .navbar-mobile {
+    top: 60px;
+    padding: 1rem;
+  }
+
+  .navbar-mobile-actions {
+    flex-direction: column;
+  }
+
+  .navbar-mobile-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 5rem 0 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+    padding: 0 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.938rem;
+  }
+
+  /* Subida */
+  .upload-zone {
+    min-height: 180px;
+    padding: 1.5rem 1rem;
+  }
+
+  .upload-zone-formats {
+    display: none;
+  }
+
+  .upload-text-input {
+    min-height: 200px;
+  }
+
+  /* Resultado */
+  .result-card {
+    padding: 1.5rem;
+  }
+
+  .result-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .result-title {
+    font-size: 1.125rem;
+  }
+
+  /* Auth */
+  .auth-container {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .auth-card {
+    padding: 1.5rem;
+  }
+
+  .auth-card-header h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Dashboard */
+  .dashboard-main {
+    padding: 1rem;
+  }
+
+  .dashboard-welcome {
+    padding: 1.5rem;
+  }
+
+  .dashboard-welcome h1 {
+    font-size: 1.375rem;
+  }
+
+  .dashboard-stat-card {
+    padding: 1.25rem;
+  }
+
+  .dashboard-stat-value {
+    font-size: 1.625rem;
+  }
+
+  /* Pricing */
+  .pricing-card-price {
+    font-size: 2.5rem;
+  }
+
+  /* CTA */
+  .cta-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-card h2 {
+    font-size: 1.375rem;
+  }
+
+  /* Botones full-width */
+  .btn-mobile-full {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Accordion */
+  .accordion-header {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+
+  /* Ocultar elementos no esenciales */
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* Partículas reducidas en móvil */
+  .hero-particle:nth-child(n+5) {
+    display: none;
+  }
+
+  .hero-leaf {
+    display: none;
+  }
+}
+
+/* =========================
+   PREFERENCIAS DEL SISTEMA
+   ========================= */
+
+/* Reducir movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: rgba(16, 185, 129, 0.3);
+    --color-text-secondary: #b0bec5;
+    --color-text-muted: #8e99a4;
+  }
+}
+
+/* Impresión */
+@media print {
+  .navbar,
+  .footer,
+  .toast-container,
+  .loading-overlay,
+  .navbar-toggle,
+  .hero-particles {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .glass-card,
+  .card {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    backdrop-filter: none;
+  }
+}
